@@ -2,6 +2,7 @@
 import 'package:dicoding_submission/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -13,7 +14,7 @@ void shared() async {
 class OnBoardingPage extends StatelessWidget {
   Widget buildImage(String path) {
     return Padding(
-      padding: EdgeInsets.only(top: 100.0),
+      padding: EdgeInsets.only(top: 125.0, left: 20.0, right: 20.0),
       child: Center(
         child: SvgPicture.asset(
           path,
@@ -28,17 +29,18 @@ class OnBoardingPage extends StatelessWidget {
         titleTextStyle: TextStyle(
           fontSize: 35,
           fontWeight: FontWeight.bold,
-          color: Colors.blueAccent,
+          color: HexColor("#2a9d8f"),
           letterSpacing: 2.0,
           fontFamily: 'Poppins',
         ),
         bodyTextStyle: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w300,
-            color: Colors.grey,
+            color: Colors.black87,
             fontFamily: 'Poppins',
             fontStyle: FontStyle.italic),
-        descriptionPadding: EdgeInsets.only(right: 15.0, left: 15.0, top: 5.0),
+        titlePadding: EdgeInsets.only(right: 15.0, left: 15.0, top: 25.0),
+        descriptionPadding: EdgeInsets.only(right: 15.0, left: 15.0, top: 25.0),
         imagePadding: EdgeInsets.only(left: 24.0, right: 24.0, bottom: 24.0),
         pageColor: Colors.white);
   }
@@ -63,7 +65,7 @@ class OnBoardingPage extends StatelessWidget {
         decoration: getPageDecor(),
         footer: RaisedButton(
           onPressed: () {},
-          color: Colors.blue,
+          color: HexColor("#2a9d8f"),
           shape: StadiumBorder(),
           child: Text(
             "Done",
@@ -89,17 +91,16 @@ class OnBoardingPage extends StatelessWidget {
             }));
           },
           style: ElevatedButton.styleFrom(
-              textStyle: TextStyle(color: Colors.white),
-              shape: StadiumBorder(),
-              onPrimary: Colors.red),
+              shape: StadiumBorder(), primary: HexColor("#2a9d8f")),
           child: Text(
             "Login",
+            style: new TextStyle(color: Colors.white),
           ),
         ),
         showSkipButton: true,
         skip: Text("Skip",
             style: new TextStyle(
-              color: Colors.grey,
+              color: Colors.black87,
               fontWeight: FontWeight.w600,
               letterSpacing: 5,
             )),
@@ -107,7 +108,7 @@ class OnBoardingPage extends StatelessWidget {
         next: Icon(Icons.arrow_forward, color: Colors.white),
         dotsDecorator: DotsDecorator(
             color: Colors.grey[400],
-            activeColor: Colors.blueAccent,
+            activeColor: HexColor("#2a9d8f"),
             activeSize: Size(25.0, 10.0),
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0))),

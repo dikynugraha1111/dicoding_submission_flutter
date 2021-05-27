@@ -24,20 +24,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Batikita',
         debugShowCheckedModeBanner: false,
-        home: initScreen == 0 || initScreen == null
+        home: initScreen == 1 || initScreen == null
             ? OnBoardingPage()
             : HomePage());
-  }
-}
-
-class Coba extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: new AppBar(title: Text("wkwk")),
-      body: Center(
-        child: Text("wow"),
-      ),
-    );
   }
 }
