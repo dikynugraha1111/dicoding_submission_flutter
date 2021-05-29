@@ -11,9 +11,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int current = 0;
   List img = [
-    "https://cdn.auth0.com/blog/illustrations/flutter.png",
-    "https://cdn.auth0.com/blog/illustrations/flutter.png",
-    "https://cdn.auth0.com/blog/illustrations/flutter.png"
+    "https://foto.kontan.co.id/ZtqnsCKMUotw3laCVwL7crhni54=/smart/2021/01/04/112846091p.jpg",
+    "https://ichef.bbci.co.uk/news/640/cpsprodpb/100AA/production/_100860756_gettyimages-635793190.jpg",
+    "https://www.nestle.co.id/sites/g/files/pydnoa241/files/asset-library/publishingimages/produk/kembanggulacoklat/nescafe-feed.jpg"
   ];
 
   List<T> map<T>(List list, Function handler) {
@@ -22,6 +22,42 @@ class _HomeState extends State<Home> {
       result.add(handler(i, list[i]));
     }
     return result;
+  }
+
+  Widget wow() {
+    return new CarouselSlider(
+        enlargeCenterPage: false,
+        autoPlay: true,
+        autoPlayInterval: Duration(seconds: 6),
+        autoPlayAnimationDuration: Duration(milliseconds: 1800),
+        pauseAutoPlayOnTouch: Duration(seconds: 4),
+        height: 200.0,
+        initialPage: 0,
+        onPageChanged: (index) {
+          setState(() {
+            current = index;
+          });
+        },
+        items: img.map((imgUrl) {
+          return Builder(builder: (BuildContext context) {
+            return Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: HexColor("#264653"),
+                ),
+                child: Image.network(
+                  imgUrl,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  },
+                ));
+          });
+        }).toList());
   }
 
   @override
@@ -33,35 +69,7 @@ class _HomeState extends State<Home> {
         new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            new CarouselSlider(
-                enlargeCenterPage: false,
-                autoPlay: true,
-                autoPlayInterval: Duration(seconds: 6),
-                autoPlayAnimationDuration: Duration(milliseconds: 1800),
-                pauseAutoPlayOnTouch: Duration(seconds: 4),
-                height: 200.0,
-                initialPage: 0,
-                onPageChanged: (index) {
-                  setState(() {
-                    current = index;
-                  });
-                },
-                items: img.map((imgUrl) {
-                  return LayoutBuilder(builder:
-                      (BuildContext context, BoxConstraints constraints) {
-                    return Container(
-                      width: 411,
-                      decoration: BoxDecoration(
-                        color: HexColor("#264653"),
-                      ),
-                      child: Image.network(
-                        imgUrl,
-                        width: 411,
-                        fit: BoxFit.cover,
-                      ),
-                    );
-                  });
-                }).toList()),
+            wow(),
             SizedBox(
               height: 10.0,
             ),
