@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import 'model/GetData.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -24,23 +26,26 @@ class _HomeState extends State<Home> {
     return result;
   }
 
-  Widget wow() {
+  Widget carousel() {
     return new CarouselSlider(
-        enlargeCenterPage: false,
-        autoPlay: true,
-        autoPlayInterval: Duration(seconds: 6),
-        autoPlayAnimationDuration: Duration(milliseconds: 1800),
-        pauseAutoPlayOnTouch: Duration(seconds: 4),
-        height: 200.0,
-        initialPage: 0,
-        onPageChanged: (index) {
-          setState(() {
-            current = index;
-          });
-        },
+        options: CarouselOptions(
+          enlargeCenterPage: true,
+          autoPlay: true,
+          autoPlayInterval: Duration(seconds: 6),
+          autoPlayAnimationDuration: Duration(milliseconds: 1800),
+          pauseAutoPlayOnTouch: true,
+          height: 200.0,
+          initialPage: 0,
+          onPageChanged: (index, c) {
+            setState(() {
+              current = index;
+            });
+          },
+        ),
         items: img.map((imgUrl) {
           return Builder(builder: (BuildContext context) {
             return Container(
+                margin: EdgeInsets.only(right: 7.0, left: 7.0, top: 10.0),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: HexColor("#264653"),
@@ -60,6 +65,15 @@ class _HomeState extends State<Home> {
         }).toList());
   }
 
+  GetDataItem getDataItem;
+  List itemModel;
+  Future<List<dynamic>> _dataModel() async {
+    GetDataItem.connectToApi().then((value) {
+      itemModel = value.data;
+    });
+    return itemModel;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -69,7 +83,7 @@ class _HomeState extends State<Home> {
         new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            wow(),
+            carousel(),
             SizedBox(
               height: 10.0,
             ),
@@ -90,7 +104,105 @@ class _HomeState extends State<Home> {
           ],
         ),
         new Text(MediaQuery.of(context).size.width.toString()),
+        new SizedBox(
+          height: 25.0,
+        ),
+        new Container(
+          height: MediaQuery.of(context).size.height,
+          child: new FutureBuilder(
+              future: _dataModel(),
+              builder: (context, webService) {
+                if (webService.hasError) {
+                  print(webService.error);
+                }
+                return webService.hasData
+                    ? new ItemListData(
+                        listData: webService.data,
+                      )
+                    : Column(children: [
+                        new Padding(
+                            padding: EdgeInsets.only(top: 75.0),
+                            child: new CircularProgressIndicator())
+                      ]);
+              }),
+        )
       ],
     )));
+  }
+}
+
+class ItemListData extends StatefulWidget {
+  final List listData;
+  ItemListData({this.listData});
+  @override
+  _ItemListDataState createState() => _ItemListDataState();
+}
+
+class _ItemListDataState extends State<ItemListData> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      scrollDirection: Axis.vertical,
+      itemCount: widget.listData == null ? 0 : widget.listData.length,
+      itemBuilder: (context, i) {
+        return new Container(
+          padding: EdgeInsets.all(5.0),
+          child: new GestureDetector(
+            onTap: () {},
+            child: new Card(
+                elevation: 7.0,
+                clipBehavior: Clip.antiAlias,
+                child: new Row(
+                  children: [
+                    new Padding(
+                      padding: EdgeInsets.all(5.0),
+                      child: new Material(
+                        child: new ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: new Image.network(
+                              widget.listData[i]["picture"],
+                              errorBuilder: (BuildContext context,
+                                  Object exception, StackTrace stackTrace) {
+                                print(exception);
+                                return Text('😢');
+                              },
+                              width: 50.0,
+                              height: 50.0,
+                              fit: BoxFit.cover,
+                            )),
+                      ),
+                    ),
+                    new Expanded(
+                      child: new Padding(
+                        padding: EdgeInsets.all(5.0),
+                        child: new Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              new Text(widget.listData[i]["firstName"],
+                                  style: new TextStyle(
+                                      fontFamily: "Poppins",
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 1,
+                                      color: Colors.black)),
+                              new Padding(
+                                padding: EdgeInsets.only(top: 2.0),
+                                child: new Row(children: [
+                                  new Expanded(
+                                      child:
+                                          new Text(widget.listData[i]["email"],
+                                              style: new TextStyle(
+                                                fontWeight: FontWeight.w300,
+                                              )))
+                                ]),
+                              )
+                            ]),
+                      ),
+                    ),
+                  ],
+                )),
+          ),
+        );
+      },
+    );
   }
 }
