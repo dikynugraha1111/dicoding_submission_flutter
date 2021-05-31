@@ -108,7 +108,7 @@ class _HomeState extends State<Home> {
           height: 25.0,
         ),
         new Container(
-          height: MediaQuery.of(context).size.height,
+          height: 411.0,
           child: new FutureBuilder(
               future: _dataModel(),
               builder: (context, webService) {
@@ -160,7 +160,7 @@ class _ItemListDataState extends State<ItemListData> {
                         child: new ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: new Image.network(
-                              widget.listData[i]["picture"],
+                              widget.listData[i]["photo"],
                               errorBuilder: (BuildContext context,
                                   Object exception, StackTrace stackTrace) {
                                 print(exception);
@@ -178,7 +178,7 @@ class _ItemListDataState extends State<ItemListData> {
                         child: new Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              new Text(widget.listData[i]["firstName"],
+                              new Text(widget.listData[i]["name"],
                                   style: new TextStyle(
                                       fontFamily: "Poppins",
                                       fontWeight: FontWeight.w600,
@@ -189,7 +189,7 @@ class _ItemListDataState extends State<ItemListData> {
                                 child: new Row(children: [
                                   new Expanded(
                                       child:
-                                          new Text(widget.listData[i]["email"],
+                                          new Text(widget.listData[i]["desc"],
                                               style: new TextStyle(
                                                 fontWeight: FontWeight.w300,
                                               )))

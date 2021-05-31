@@ -13,8 +13,8 @@ class GetDataItem {
   }
 
   static Future<GetDataItem> connectToApi() async {
-    var response = await http.get("https://dummyapi.io/data/api/user?limit=25",
-        headers: {"app-id": "60adc999d31cd0ec106f8777"});
+    var response = await http
+        .get("https://mocki.io/v1/b419c87c-668b-47c1-b070-3be1868bb285");
     var responseObject = json.decode(response.body);
     return GetDataItem.getData(responseObject);
   }
