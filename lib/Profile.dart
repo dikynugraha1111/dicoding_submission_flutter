@@ -1,10 +1,33 @@
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:hexcolor/hexcolor.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Profile extends StatefulWidget {
   @override
   _ProfileState createState() => _ProfileState();
 }
+
+const _urlGit = 'https://github.com/dikynugraha1111';
+const _urlAPI = 'https://mocki.io/v1/b419c87c-668b-47c1-b070-3be1868bb285';
+const _urlLink = 'https://www.linkedin.com/in/diky-nugraha-difiera/';
+const _urlInst = 'https://www.instagram.com/dikydifiera/';
+
+void _launchURLGit() async => await canLaunch(_urlGit)
+    ? await launch(_urlGit)
+    : throw 'Could not launch $_urlGit';
+
+void _launchURLAPI() async => await canLaunch(_urlAPI)
+    ? await launch(_urlAPI)
+    : throw 'Could not launch $_urlAPI';
+
+void _launchURLLink() async => await canLaunch(_urlLink)
+    ? await launch(_urlLink)
+    : throw 'Could not launch $_urlLink';
+
+void _launchURLIns() async => await canLaunch(_urlInst)
+    ? await launch(_urlInst)
+    : throw 'Could not launch $_urlInst';
 
 class _ProfileState extends State<Profile> {
   @override
@@ -58,25 +81,33 @@ class _ProfileState extends State<Profile> {
             style: ElevatedButton.styleFrom(
               primary: HexColor("#2a9d8f"),
             ),
-            onPressed: () {},
+            onPressed: () {
+              _launchURLGit();
+            },
             child: new Text("GitHub.. !!!")),
         new ElevatedButton(
             style: ElevatedButton.styleFrom(
               primary: HexColor("#2a9d8f"),
             ),
-            onPressed: () {},
+            onPressed: () {
+              _launchURLAPI();
+            },
             child: new Text("Get API.. !!!")),
         new ElevatedButton(
             style: ElevatedButton.styleFrom(
               primary: HexColor("#2a9d8f"),
             ),
-            onPressed: () {},
+            onPressed: () {
+              _launchURLLink();
+            },
             child: new Text("LinkedIn.. !!!")),
         new ElevatedButton(
             style: ElevatedButton.styleFrom(
               primary: HexColor("#2a9d8f"),
             ),
-            onPressed: () {},
+            onPressed: () {
+              _launchURLIns();
+            },
             child: new Text("Instagram.. !!!")),
       ]),
     );
