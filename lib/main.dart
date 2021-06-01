@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Batikita',
+        title: 'KopNus',
         debugShowCheckedModeBanner: false,
         home: initScreen == 1 || initScreen == null
             ? OnBoardingPage()

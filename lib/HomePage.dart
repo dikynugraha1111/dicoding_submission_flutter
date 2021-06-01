@@ -34,6 +34,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: new AppBar(
+          title: new Text("KopNus"),
+          backgroundColor: new HexColor("#2a9d8f"),
+          leading: Icon(Icons.coffee),
+        ),
         bottomNavigationBar: CurvedNavigationBar(
           index: _pageIndex,
           onTap: (int page) {
@@ -41,7 +46,7 @@ class _HomePageState extends State<HomePage> {
               _viewPage = _selectPage(page);
             });
           },
-          color: HexColor("#264653"),
+          color: HexColor("#2a9d8f"),
           backgroundColor: Colors.white,
           buttonBackgroundColor: HexColor("#2a9d8f"),
           height: 55,

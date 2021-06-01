@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:dicoding_submission/view/detailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -148,7 +149,14 @@ class _ItemListDataState extends State<ItemListData> {
         return new Container(
           padding: EdgeInsets.all(5.0),
           child: new GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context)
+                  .push(new MaterialPageRoute(builder: (BuildContext context) {
+                return DetailPage(
+                  index: 1,
+                );
+              }));
+            },
             child: new Card(
                 elevation: 7.0,
                 clipBehavior: Clip.antiAlias,
