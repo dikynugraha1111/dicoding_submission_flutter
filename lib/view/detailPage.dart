@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 // ignore: must_be_immutable
 class DetailPage extends StatefulWidget {
@@ -43,13 +44,16 @@ class _DetailPageState extends State<DetailPage> {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                new Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 215.0,
-                    decoration: new BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(widget.photo),
-                            fit: BoxFit.cover))),
+                new Hero(
+                  tag: widget.index,
+                  child: new Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 215.0,
+                      decoration: new BoxDecoration(
+                          image: DecorationImage(
+                              image: NetworkImage(widget.photo),
+                              fit: BoxFit.cover))),
+                ),
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -57,7 +61,7 @@ class _DetailPageState extends State<DetailPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CircleAvatar(
-                          backgroundColor: Colors.grey,
+                          backgroundColor: HexColor("#264653"),
                           child: IconButton(
                             icon: Icon(
                               Icons.arrow_back,
@@ -201,7 +205,8 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     return IconButton(
       icon: Icon(
         isFavorite ? Icons.archive : Icons.archive_outlined,
-        color: Colors.grey,
+        color: HexColor("#264653"),
+        size: 40.0,
       ),
       onPressed: () {
         setState(() {

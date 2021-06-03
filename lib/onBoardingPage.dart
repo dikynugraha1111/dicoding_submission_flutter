@@ -27,20 +27,20 @@ class OnBoardingPage extends StatelessWidget {
   PageDecoration getPageDecor() {
     return PageDecoration(
         titleTextStyle: TextStyle(
-          fontSize: 35,
+          fontSize: 30,
           fontWeight: FontWeight.bold,
           color: HexColor("#2a9d8f"),
           letterSpacing: 2.0,
           fontFamily: 'Poppins',
         ),
         bodyTextStyle: TextStyle(
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: FontWeight.w300,
             color: Colors.black87,
             fontFamily: 'Poppins',
             fontStyle: FontStyle.italic),
-        titlePadding: EdgeInsets.only(right: 15.0, left: 15.0, top: 25.0),
-        descriptionPadding: EdgeInsets.only(right: 15.0, left: 15.0, top: 25.0),
+        titlePadding: EdgeInsets.only(right: 15.0, left: 15.0, top: 15.0),
+        descriptionPadding: EdgeInsets.only(right: 15.0, left: 15.0, top: 15.0),
         imagePadding: EdgeInsets.only(left: 24.0, right: 24.0, bottom: 24.0),
         pageColor: Colors.white);
   }
@@ -48,30 +48,24 @@ class OnBoardingPage extends StatelessWidget {
   List<PageViewModel> getPages() {
     return [
       PageViewModel(
-          title: "UAD",
-          body: "Dengan mengetahui Batik, kamu telah melestarikan Budaya...>>>",
-          image: buildImage("img/op1.svg"),
+          title: "Kopi",
+          body:
+              "Dengan mengetahui kopi, anda telah melestarika budaya Melek...>>>",
+          image: buildImage("img/1OP.svg"),
           decoration: getPageDecor()),
       PageViewModel(
-        title: "UAD",
-        body: "Dengan mengetahui Batik, kamu telah melestarikan Budaya...>>>",
-        image: buildImage("img/op1.svg"),
+        title: "Gak ngopi Gak ngoding",
+        body:
+            "Survei membuktikan bahwa 80% orang ngoding meminum kopi, dan sisanya ngopi...>>>",
+        image: buildImage("img/2OP.svg"),
         decoration: getPageDecor(),
       ),
       PageViewModel(
-        title: "UAD",
-        body: "Dengan mengetahui Batik, kamu telah melestarikan Budaya...>>>",
-        image: buildImage("img/op1.svg"),
+        title: "Fitur Kami",
+        body:
+            "Fitur yang telah diimpelmentasikan diantaranya : Hero Animation, API, Carousel SLider, Curved Navigation, URL Launcher(Profile tab), dan tentunya Shared Preference...>>>",
+        image: buildImage("img/3OP.svg"),
         decoration: getPageDecor(),
-        footer: RaisedButton(
-          onPressed: () {},
-          color: HexColor("#2a9d8f"),
-          shape: StadiumBorder(),
-          child: Text(
-            "Done",
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
       ),
     ];
   }
