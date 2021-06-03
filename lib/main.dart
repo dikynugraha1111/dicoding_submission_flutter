@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'KopNus',
         debugShowCheckedModeBanner: false,
-        home: initScreen == 1 || initScreen == null
+        home: initScreen == 0 || initScreen == null
             ? OnBoardingPage()
             : HomePage());
   }
