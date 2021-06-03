@@ -109,7 +109,7 @@ class _HomeState extends State<Home> {
         ),
         new Container(
           height: 411.0,
-          padding: EdgeInsets.only(bottom: 33.0),
+          padding: EdgeInsets.only(bottom: 30.0),
           child: new FutureBuilder(
               future: _dataModel(),
               builder: (context, webService) {
