@@ -2,8 +2,20 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class DetailPage extends StatefulWidget {
-  DetailPage({required this.index});
-  int index;
+  DetailPage(
+      {required this.index,
+      required this.ticketPrice,
+      required this.name,
+      required this.desc,
+      required this.citraRasa,
+      required this.photo});
+  String index;
+  String ticketPrice;
+  String name;
+  String citraRasa;
+  String desc;
+  String photo;
+
   @override
   _DetailPageState createState() => _DetailPageState();
 }
@@ -36,8 +48,7 @@ class _DetailPageState extends State<DetailPage> {
                     height: 215.0,
                     decoration: new BoxDecoration(
                         image: DecorationImage(
-                            image: NetworkImage(
-                                "https://foto.kontan.co.id/ZtqnsCKMUotw3laCVwL7crhni54=/smart/2021/01/04/112846091p.jpg"),
+                            image: NetworkImage(widget.photo),
                             fit: BoxFit.cover))),
                 SafeArea(
                   child: Padding(
@@ -71,7 +82,7 @@ class _DetailPageState extends State<DetailPage> {
                     padding: EdgeInsets.symmetric(horizontal: 11.0),
                     margin: EdgeInsets.only(top: 190.0),
                     child: Text(
-                      "Kopi Luwak Arabica",
+                      widget.name,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontStyle: FontStyle.normal,
@@ -97,7 +108,7 @@ class _DetailPageState extends State<DetailPage> {
                     children: <Widget>[
                       Icon(Icons.wine_bar),
                       SizedBox(height: 8.0),
-                      Text("Pahit Strong"),
+                      Text(widget.citraRasa),
                     ],
                   ),
                   Column(
@@ -111,7 +122,7 @@ class _DetailPageState extends State<DetailPage> {
                     children: <Widget>[
                       Icon(Icons.monetization_on),
                       SizedBox(height: 8.0),
-                      Text("Rp 5000")
+                      Text(widget.ticketPrice)
                     ],
                   ),
                 ],
@@ -132,7 +143,7 @@ class _DetailPageState extends State<DetailPage> {
             Container(
               margin: EdgeInsets.only(right: 21.0, left: 21.0, bottom: 100.0),
               child: Text(
-                "Coffea arabica (/əˈræbɪkə/), also known as the Arabian coffee, 'coffee shrub of Arabia', 'mountain coffee' or 'arabica coffee', is a species of Coffea. It is believed to be the first species of coffee to be cultivated, and is the dominant cultivar, representing about 60% of global production.[2] Coffee produced from the (less acidic, more bitter, and more highly caffeinated) robusta bean (C. canephora) makes up most of the remaining coffee production. Arabica coffee originates from Ethiopia and was first cultivated in Yemen, and documented by the 12th century.[3][4] Coffea arabica is called ‏بُنّ‎ (būnn) in Arabic, borrowed from the Oromo Buna. ",
+                widget.desc,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 14.0,

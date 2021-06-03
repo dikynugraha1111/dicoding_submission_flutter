@@ -153,7 +153,12 @@ class _ItemListDataState extends State<ItemListData> {
               Navigator.of(context)
                   .push(new MaterialPageRoute(builder: (BuildContext context) {
                 return DetailPage(
-                  index: 1,
+                  index: widget.listData[i]["id"],
+                  ticketPrice: widget.listData[i]["ticketPrice"],
+                  name: widget.listData[i]["name"],
+                  citraRasa: widget.listData[i]["citra_rasa"],
+                  desc: widget.listData[i]["desc"],
+                  photo: widget.listData[i]["photo"],
                 );
               }));
             },
@@ -198,6 +203,7 @@ class _ItemListDataState extends State<ItemListData> {
                                   new Expanded(
                                       child:
                                           new Text(widget.listData[i]["desc"],
+                                              maxLines: 2,
                                               style: new TextStyle(
                                                 fontWeight: FontWeight.w300,
                                               )))

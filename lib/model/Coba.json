@@ -1,57 +1,75 @@
 {
     "data":[
   {
+    "id": "1",
     "ticketPrice": "Rp 25000",
-    "name": "Kopi London",
-    "desc": "Kopi dengan racikan London gula mentega rasanya kek ironman",
+    "name": "Kopi Robusta temanggung",
+    "citra_rasa": "Pahit agak manis",
+    "desc": "Kopi robusta temanggung grade 2 dengan teknik roasting yang tepat menghasilkan karakter citarasa yang clean. Jenis : Robusta Grade 2 Origin : Temanggung Variety : TugusariAltitude : 500 - 700 mdpl Proses : Fullwash Level Roasting : Medium To Dark Notes : Chocolate, Nutty, Low acidity",
     "photo" : "https://image-cdn.medkomtek.com/kqxfebdrvnfv6jCfsJa-QOzuu3s=/1x49:1000x612/1200x675/klikdokter-media-buckets/medias/2302800/original/045285900_1547016776-4-Cara-Bikin-Kebiasaan-Minum-Kopi-Jadi-Lebih-Sehat-By-Ruslan-Semichev-Shutterstock.jpg"
   },
   {
+    "id": "2",
     "ticketPrice": "Rp 20000",
     "name": "Robusta",
-    "desc": "Kopi dengan racikan nikmat tanpa pemanis buatan mantan",
+    "citra_rasa": "Pahit Sepet",
+    "desc": "Kopi Robusta (nama Latin Coffea canephora atau Coffea robusta) merupakan keturunan beberapa spesies kopi, terutama Coffea canephora. Jenis kopi ini tumbuh baik di ketinggian 400-700 m dpl, temperatur 21-24° C dengan bulan kering 3-4 bulan secara berturut-turut dan 3-4 kali hujan kiriman. Kualitas buah lebih rendah dari Arabika dan Liberika. ",
     "photo": "https://cdns.klimg.com/merdeka.com/i/w/news/2020/10/16/1232157/540x270/mengenal-perbedaan-kopi-robusta-dan-arabika-ketahui-karakteristiknya.jpg"
   },
   {
+    "id": "3",
     "ticketPrice": "Free",
     "name": "Americano",
-    "desc": "Kopi asli dari paman jo abi den... diminum sehari 24 kali",
+    "citra_rasa": "Pahit Banget",
+    "desc": "Caffè Americano atau Amerikano[1] adalah minuman kopi yang dibuat dengan mencampurkan satu seloki espresso dengan air panas.[2] Air panas yang digunakan dalam minuman ini adalah sebanyak 6 hingga 8 ons.[3] Nama dari kopi ini pada awalnya merupakan ejekan bagi orang-orang Amerika yang meminta agar espresso mereka dibuat menjadi lebih encer.[3] ",
     "photo": "https://ds393qgzrxwzn.cloudfront.net/resize/m600x500/cat1/img/images/0/GBATXlxns6.jpg"
   },
   {
+    "id": "4",
     "ticketPrice": "Rp 26000",
-    "name": "Kopi Nusantara",
-    "desc": "Kopi asli dari Kerajaan Sunda Empire",
+    "name": "Kopi Toraja",
+    "citra_rasa": "Manis dikit",
+    "desc": "Di daerah paling barat di Indonesia, terdapat dua jenis kopi yang diproduksi, yaitu kopi jenis Arabika dan Robusta. Nah, yang paling terkenal dari Aceh adalah kopi Gayo Arabika-nya yang digadang-gadang sebagai salah satu kopi terbaik di dunia. Karakteristik yang paling kuat milik kopi Aceh Gayo ini adalah aromanya yang sangat tajam. Selain itu, kopi Gayo tidak memberi bekas rasa pahit yang lekat di lidah setelah meminumnya, berbeda dengan kebanyakan jenis kopi lainnya yang meninggalkan aftertaste pahit. Inilah alasan mengapa banyak orang sangat menikmati kopi Aceh Gayo.",
     "photo": "https://asset.kompas.com/crops/3RNjNkRitPrA_lCjMW_Ct17XHME=/0x0:0x0/750x500/data/photo/2020/01/26/5e2d252be1431.jpg"
   },
   {
+    "id": "5",
     "ticketPrice": "Rp 30000",
     "name": "Kopi Nusantara",
+    "citra_rasa": "Manis dikit",
     "desc": "Kopi asli dari Kerajaan Sunda Empire",
     "photo": "https://asset.kompas.com/crops/3RNjNkRitPrA_lCjMW_Ct17XHME=/0x0:0x0/750x500/data/photo/2020/01/26/5e2d252be1431.jpg"
   },
   {
+    "id": "6",
     "ticketPrice": "Rp 20000",
     "name": "Kopi Nescafe",
+    "citra_rasa": "Pahit",
     "desc": "Kopinya anak kos tanggal tua",
     "photo": "https://cdn-2.tstatic.net/bali/foto/bank/images/tanggal-tua_20170831_160221.jpg"
   },
   {
+    "id": "7",
     "ticketPrice": "Rp 30000",
-    "name": "Soda Mendung",
-    "desc": "Kami ciptakan minuman mendung, karena yang gembira belum tentu bahagia",
+    "name": "Kopi Lampung",
+    "citra_rasa": "Agak kecut",
+    "desc": "Berbeda dengan Aceh Gayo yang lebih terkenal dengan jenis kopi Arabikanya, kopi Lampung justru sangat mengunggulkan kopi jenis Robusta. Karakteristik yang sangat terasa dari kopi nusantara asal Lampung teksturnya yang halus, namun rasanya yang cukup kuat. Metode dry processing yang digunakan dalam pengolahan biji kopi Lampung ini pun diyakini sebagai asal mula cita rasa dan karakteristik yang kuat di dalamnya.",
     "photo": "https://cdn-2.tstatic.net/palu/foto/bank/images/es-soda-gembira-instagrampakkostamboel.jpg"
   },
   {
+    "id": "8",
     "ticketPrice": "Rp 15000",
     "name": "Kopi Accademy",
+    "citra_rasa": "Bikin Pintar",
     "desc": "Kopinya anak pintar, sekali sruput langsung sikat",
     "photo": "https://www.brasilmoka-coffee.com/media/cache/bigrectangle/files/pages/11/istock-brewing.jpg"
   },
   {
+    "id": "9",
     "ticketPrice": "Rp 10000",
-    "name": "Kopiin aja",
-    "desc": "Seketika kopi melegakan jiwa",
+    "name": "Kopiin Jawa",
+    "citra_rasa": "Bikin Strong",
+    "desc": "Produksi biji kopi Jawa umumnya dilakukan dengan metode wet processing sehingga cita rasanya mungkin sedikit berbeda dan tidak sekuat biji kopi yang dihasilkan di Sumatera atau Sulawesi. Meskipun begitu, jenis kopi Arabika ini sangat dinikmati karena rasanya yang dinilai ‘seimbang’. Tingkat keasaman yang medium dan kekentalan yang nggak terlalu pekat menjadi serta semilir aroma rempah yang dihasilkan, membuat ciri khas sendiri saat menenggaknya.",
     "photo": "https://www.brasilmoka-coffee.com/media/cache/bigrectangle/files/pages/11/istock-brewing.jpg"
   }
 ]
