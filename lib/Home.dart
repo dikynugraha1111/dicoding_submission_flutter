@@ -104,9 +104,8 @@ class _HomeState extends State<Home> {
             )
           ],
         ),
-        new Text(MediaQuery.of(context).size.width.toString()),
         new SizedBox(
-          height: 25.0,
+          height: 20.0,
         ),
         new Container(
           height: 411.0,
