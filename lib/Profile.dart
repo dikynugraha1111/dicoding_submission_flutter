@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Profile extends StatefulWidget {
-  @override
-  _ProfileState createState() => _ProfileState();
-}
-
 const _urlGit = 'https://github.com/dikynugraha1111';
 const _urlAPI = 'https://mocki.io/v1/b419c87c-668b-47c1-b070-3be1868bb285';
 const _urlLink = 'https://www.linkedin.com/in/diky-nugraha-difiera/';
@@ -29,7 +24,9 @@ void _launchURLIns() async => await canLaunch(_urlInst)
     ? await launch(_urlInst)
     : throw 'Could not launch $_urlInst';
 
-class _ProfileState extends State<Profile> {
+class Profile extends StatelessWidget {
+  const Profile({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
